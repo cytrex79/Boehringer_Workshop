@@ -1,0 +1,54 @@
+<mvc:View controllerName="ns.Paramete_Routing_Extended.controller.Covid19" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="covid19Page" title="Numbers for {country}" showNavButton="true" navButtonPress="handleNavBack">
+					<content>
+                         <Table id="covid19DataTable" selectionChange="handleSelectionChange" mode="SingleSelectMaster">
+                            <columns>
+                                <Column><header><Text text="Cases" /></header></Column>
+                            </columns>
+                            <columns>
+                                <Column><header><Text text="Active" /></header></Column>
+                            </columns>
+                            <columns>
+                                <Column><header><Text text="TodayCases" /></header></Column>
+                            </columns>
+                            <columns>
+                                <Column><header><Text text="Death" /></header></Column>
+                            </columns>
+                            <columns>
+                                <Column><header><Text text="Recovered" /></header></Column>
+                            </columns>
+                            <columns>
+                                <Column><header><Text text="Today Recovered" /></header></Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{cases}" />
+                                     </cells>
+                                      <cells>
+                                        <Text text="{active}" />
+                                     </cells>
+                                     <cells>
+                                        <Text text="{todayCases}" />
+                                     </cells>
+                                     <cells>
+                                        <Text text="{deaths}" />
+                                     </cells>
+                                     <cells>
+                                        <Text text="{recovered}" />
+                                     </cells>
+                                      <cells>
+                                        <Text text="{todayRecovered}" />
+                                     </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

@@ -1,0 +1,57 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="workshop.UI5Module.controller.Main" displayBlock="true" xmlns:l="sap.ui.layout">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+                        <l:Splitter orientation="Vertical" height="45%">
+                            <Table items="{/Customers}" noDataText="Drop column list items here and columns in the area above" selectionChange="handleItemPressed"
+                            mode="SingleSelectMaster">
+					        <items>
+					            <ColumnListItem>
+					                <cells>
+					                    <Text text="{ContactTitle}"/>
+					                    <Text text="{ContactName}"/>
+					                    <Text text="{Address}"/>
+					                    <Text text="{City}"/>
+                                        <Text text="{Country}"/>
+                                    </cells>
+					            </ColumnListItem>
+					        </items>
+					        <columns>
+					            <Column><header><Label text="Title"/></header></Column>
+                                <Column><header><Label text="Name"/></header></Column>
+                                <Column><header><Label text="Address"/></header></Column>
+                                <Column><header><Label text="City"/></header></Column>     
+                                <Column><header><Label text="Country"/></header></Column>     
+					        </columns>
+                        </Table>
+                        </l:Splitter>
+					    <l:Splitter id="idSplitter" orientation="Vertical" height="45%" class="sapUiMediumMarginTop">
+                        <Table items="{Orders}" noDataText="Drop column list items here and columns in the area above">
+					        <items>
+					            <ColumnListItem type="Active">
+					                <cells>
+					                    <Text text="{path: 'OrderDate', type: 'sap.ui.model.type.DateTime' }"/>
+					                    <Text text="{ShipName}"/>
+					                    <Text text="{ShipAddress}"/>
+					                    <Text text="{ShipCity}"/>
+                                        <Text text="{ShipCountry}"/>
+                                    </cells>
+					            </ColumnListItem>
+					        </items>
+					        <columns>
+					            <Column><header><Label text="Order Date"/></header></Column>
+                                <Column><header><Label text="Ship Name"/></header></Column>
+                                <Column><header><Label text="Ship Address"/></header></Column>
+                                <Column><header><Label text="Ship City"/></header></Column>     
+                                <Column><header><Label text="Ship Country"/></header></Column>     
+					        </columns>
+                        </Table>
+                        </l:Splitter>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

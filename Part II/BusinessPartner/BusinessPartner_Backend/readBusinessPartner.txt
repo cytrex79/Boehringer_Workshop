@@ -1,0 +1,29 @@
+METHOD businesspartners_get_entity.
+DATA: ls_bp_id TYPE bapi_epm_bp_id,
+      ls_headerdata TYPE bapi_epm_bp_header,
+lt_return TYPE TABLE OF bapiret2.
+
+
+
+* Get key fields from request
+    io_tech_request_context->get_converted_keys(
+      IMPORTING            es_key_values = er_entity
+    ).
+    ls_bp_id-bp_id = er_entity-bp_id.
+* Get data
+    CALL FUNCTION 'BAPI_EPM_BP_GET_DETAIL'
+      EXPORTING
+        bp_id      = ls_bp_id
+      IMPORTING
+        headerdata = er_entity
+      TABLES
+        return     = lt_return.
+    IF lt_return IS NOT INITIAL.
+      " Message Container
+      mo_context->get_message_container( )->add_messages_from_bapi( lt_return ).
+      RAISE EXCEPTION TYPE /iwbep/cx_mgw_busi_exception
+        EXPORTING
+          textid = /iwbep/cx_mgw_busi_exception=>business_error
+          message_container = mo_context->get_message_container( ).
+    ENDIF.
+  ENDMETHOD.

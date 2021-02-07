@@ -1,0 +1,32 @@
+<mvc:View controllerName="ns.Paramete_Routing_Extended.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+                    <Table items="{/}" selectionChange="handleSelectionChange" mode="SingleSelectMaster">
+                            <headerToolbar>
+                                <Toolbar>
+                                    <ToolbarSpacer />
+                                    <Button icon="sap-icon://sys-help" press="handleInfo"/>
+                                </Toolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column><header><Text text="Country" /></header></Column>
+                                <Column><header><Text text="Country ISO 3" /></header></Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{country}" />
+                                        <Text text="{countryInfo/iso3}" />                                        
+                                     </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

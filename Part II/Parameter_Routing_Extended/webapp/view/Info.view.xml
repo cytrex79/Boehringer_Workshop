@@ -1,0 +1,14 @@
+<mvc:View controllerName="ns.Paramete_Routing_Extended.controller.Info" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<MessagePage
+		title="Information"
+		text="App Information"
+		description="This App is to demonstrate routing"
+        showNavButton="true" navButtonPress="handleNavBack"
+        />
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

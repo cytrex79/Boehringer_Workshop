@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>UI5Module</title>
+		<script id="sap-ui-bootstrap"
+			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+            data-sap-ui-theme="sap_belize"
+            data-sap-libs="sap.m"
+			data-sap-ui-resourceroots='{"workshop.UI5Module": "./"}'
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-async="true"
+            data-sap-ui-frameOptions="trusted">
+        </script>
+
+        <script>
+            sap.ui.getCore().attachInit(function() {
+                sap.ui.require(["workshop/UI5Module/libs/CustomMessage"], function(CustomMessage){
+                    CustomMessage.show("Das ist ein Test", "Überschrift");
+                });
+			});
+        </script>
+	</head>
+</html>

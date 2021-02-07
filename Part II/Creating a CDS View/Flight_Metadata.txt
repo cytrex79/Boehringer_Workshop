@@ -1,0 +1,36 @@
+@AbapCatalog.sqlViewName: 'Z_FLIGHT'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #NOT_ALLOWED
+@EndUserText.label: 'CDV View for Flights Table'
+
+@Metadata.allowExtensions: true
+@Search.searchable: true
+
+@OData.publish: true
+
+define view ZFlights as select from sflight {
+    key carrid as Carrid,
+    key connid as Connid,
+    key fldate as Fldate,
+    
+    @Semantics.amount.currencyCode: 'Currency'
+    price as Price,
+    
+    
+    @Semantics.currencyCode: true
+    currency as Currency,
+    
+    
+    planetype as Planetype
+    @<Search.defaultSearchElement: true,
+    
+    seatsmax as Seatsmax,
+    seatsocc as Seatsocc,
+    paymentsum as Paymentsum,
+    seatsmax_b as SeatsmaxB,
+    seatsocc_b as SeatsoccB,
+    seatsmax_f as SeatsmaxF,
+    seatsocc_f as SeatsoccF
+}
+

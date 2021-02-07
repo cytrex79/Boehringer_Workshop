@@ -1,0 +1,30 @@
+<mvc:View controllerName="workshop.UI5Module.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+                        <Carousel pages="{/data}" height="300px" loop="true">
+                            <pages>
+                                <Image src="{imagePath}"></Image>
+                            </pages>
+                        </Carousel>
+
+                        <Table items="{/data}">
+                        <columns>
+                            <Column><header><Text text="Imagename"/></header></Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <Text text="{imagePath}"></Text>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                        </Table>
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

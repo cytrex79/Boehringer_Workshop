@@ -1,0 +1,20 @@
+METHOD businesspartners_get_entityset.
+    DATA: ls_entity     LIKE LINE  OF et_entityset,
+          lt_headerdata TYPE TABLE OF bapi_epm_bp_header,
+          ls_headerdata LIKE LINE  OF lt_headerdata,
+          lt_return     TYPE TABLE OF bapiret2.
+* Get data
+    CALL FUNCTION 'BAPI_EPM_BP_GET_LIST'
+      TABLES
+        bpheaderdata = et_entityset
+        return       = lt_return.
+    IF lt_return IS NOT INITIAL.
+      " Message Container
+      mo_context->get_message_container( )->add_messages_from_bapi( lt_return ).
+      RAISE EXCEPTION TYPE /iwbep/cx_mgw_busi_exception
+        EXPORTING
+          textid = /iwbep/cx_mgw_busi_exception=>business_error
+          message_container = mo_context->get_message_container( ).
+    ENDIF.
+
+ENDMETHOD.

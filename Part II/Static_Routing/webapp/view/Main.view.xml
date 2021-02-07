@@ -1,0 +1,20 @@
+<mvc:View controllerName="ns.Static_Routing.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+                        <Table>
+                            <headerToolbar>
+                                <Toolbar>
+                                    <ToolbarSpacer />
+                                    <Button icon="sap-icon://sys-help" press="handleInfo"/>
+                                </Toolbar>
+                            </headerToolbar>
+                        </Table>
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

@@ -1,0 +1,35 @@
+<mvc:View controllerName="workshop.UI5Module.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="BusinessPartners">
+					<content>
+                        <Table items="{/BusinessPartnerSet}" mode="SingleSelectMaster" selectionChange="handleSelectionChange">
+                        <headerToolbar>
+                        <Toolbar>
+                            <Button icon="sap-icon://add" press="handleCreate" />
+                        </Toolbar>
+                        </headerToolbar>
+                            <columns>
+                                <Column><header><Text text="ID" /></header></Column>
+                                <Column><header><Text text="ID" /></header></Column>
+                                <Column><header><Text text="ID" /></header></Column>
+                                <Column><header><Text text="ID" /></header></Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{BpId}" />
+                                        <Text text="{BpRole}" />
+                                        <Text text="{EmailAddress}" />
+                                        <Text text="{CompanyName}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

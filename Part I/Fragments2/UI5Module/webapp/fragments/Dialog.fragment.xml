@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+    <Dialog id="dialog" title="Enter your Text">
+        <content>
+            <f:SimpleForm>
+                <f:content>
+                    <Label text="Enter text" />
+                    <Input id="xmlText"/>
+                </f:content>
+            </f:SimpleForm>
+        </content>
+        <buttons>
+            <Button text="Close" press="handleClosePress" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

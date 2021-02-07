@@ -1,0 +1,45 @@
+{
+"groups": [{
+    "name": "Technical Service Center",
+    "employees":[
+        {"fullname": "Lindsay Burchfield", "age": 47,"gender": "Male"}, 
+        {"fullname": "Steffen Stammirs", "age": 47,"gender": "Male"}, 
+        {"fullname": "Shantee Derl", "age": 32,"gender": "Female"},
+        {"fullname": "Myrah D'Aeth", "age": 20,"gender": "Female"},
+        {"fullname": "Gavin Brownbill", "age": 42,"gender": "Male"},
+        {"fullname": "Theadora Beesey", "age": 20,"gender": "Female"},
+        {"fullname": "Collette Hallewell", "age": 55,"gender": "Female"},
+        {"fullname": "Kalil Ingrem", "age": 57,"gender": "Male"}, 
+        {"fullname": "Bentlee Skacel", "age": 19,"gender": "Male"}, 
+        {"fullname": "Dorisa Hoovart","age": 31,"gender": "Female"}, 
+        {"fullname": "Tamra Bachman","age": 24,"gender": "Female"}, 
+        {"fullname": "Murdock Decent","age": 21,"gender": "Male"}, 
+        {"fullname": "Simeon Grigori","age": 33,"gender": "Male"}, 
+        {"fullname": "Nerty Powrie","age": 54,"gender": "Female"}, 
+        {"fullname": "Kendell Shellshear","age": 45,"gender": "Male"}
+    ]},
+    {
+    "name": "Online Support",
+    "employees":[
+        {"fullname": "Meyer Lamar","gender": "Male","age": 58}, 
+        {"fullname": "Vincents Laxston","gender": "Male","age": 22}, 
+        {"fullname": "Perren Hurle","gender": "Male","age": 44}, 
+        {"fullname": "Ralph Alenin","gender": "Male","age": 53}, 
+        {"fullname": "Bearnard Barling","gender": "Male","age": 63}, 
+        {"fullname": "Gunter Canario","gender": "Male","age": 47}, 
+        {"fullname": "Kristin Gulliver","gender": "Female","age": 23}, 
+        {"fullname": "Tiphany O'Hartnedy","gender": "Female","age": 28}, 
+        {"fullname": "Sonja Croke","gender": "Female","age": 37}, 
+        {"fullname": "Andria Enocksson","gender": "Female","age": 44}, 
+        {"fullname": "Aldin Faragher","gender": "Male","age": 33}, 
+        {"fullname": "Lorant Snelgrove","gender": "Male","age": 24}, 
+        {"fullname": "Sholom Staggs","gender": "Male","age": 32}, 
+        {"fullname": "Murial Abelovitz","gender": "Female","age": 20}, 
+        {"fullname": "Maximilianus Boniface","gender": "Male","age": 35}, 
+        {"fullname": "Jeannie Luna","gender": "Female","age": 65}, 
+        {"fullname": "Dwayne Godsmark","gender": "Male","age": 46}, 
+        {"fullname": "Alistair Combes","gender": "Male","age": 21}, 
+        {"fullname": "Evelina Quantick","gender": "Female","age": 28}, 
+        {"fullname": "Jorgan Tebbet","gender": "Male","age": 32}
+    ]}
+]}

@@ -1,0 +1,28 @@
+<mvc:View controllerName="workshop.UI5Module.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page">
+					<content>
+                         <Table items="{/employees}">
+                            <columns>
+                                <Column><header><Text text="{i18n>column1Title}"></Text></header></Column>
+                                <Column><header><Text text="{i18n>column2Title}"></Text></header></Column>
+                                <Column><header><Text text="{i18n>column3Title}"></Text></header></Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{fullname}"></Text>
+                                        <Text text="{age}"></Text>
+                                        <Text text="{gender}"></Text>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

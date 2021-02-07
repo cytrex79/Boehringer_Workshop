@@ -1,0 +1,27 @@
+  method BUSINESSPARTNERS_DELETE_ENTITY.
+DATA: ls_entity TYPE zcl_zprep_mpc_ext=>ts_businesspartner,
+        ls_bp_id  TYPE bapi_epm_bp_id,
+        lt_return TYPE TABLE OF bapiret2.
+
+* Get key
+    io_tech_request_context->get_converted_keys(
+      IMPORTING
+        es_key_values = ls_entity
+    ).
+    ls_bp_id-bp_id = ls_entity-bp_id.
+* Delete data
+    CALL FUNCTION 'BAPI_EPM_BP_DELETE'
+    EXPORTING
+      bp_id         = ls_bp_id
+*     PERSIST_TO_DB  =  ABAP_TRUE
+    TABLES
+      return        = lt_return.
+  IF lt_return IS NOT INITIAL.
+    "Message Container
+    mo_context->get_message_container( )->add_messages_from_bapi( lt_return ).
+    RAISE EXCEPTION TYPE /iwbep/cx_mgw_busi_exception
+      EXPORTING
+        textid = /iwbep/cx_mgw_busi_exception=>business_error
+        message_container = mo_context->get_message_container( ).
+  ENDIF.
+  endmethod.

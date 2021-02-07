@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+    <Dialog id="dialog" title="BusinessPartner">
+        <content>
+            <f:SimpleForm>
+                <f:content>
+                    <Label text="Business Partner Rolle" />
+                    <Input value="{BpRole}"/>
+                    <Label text="Emailaddress" />
+                    <Input value="{EmailAddress}"/>
+                    <Label text="Company name" />
+                    <Input value="{CompanyName}"/>
+                    <Label text="Currencycode" />
+                    <Input value="{CurrencyCode}"/>
+                    <Label text="City" />
+                    <Input value="{City}"/>
+                    <Label text="Street" />
+                    <Input value="{Street}"/>
+                    <Label text="Country" />
+                    <Input value="{Country}"/>
+                    <Label text="AddressType" />
+                    <Input value="{AddressType}"/>
+                </f:content>
+            </f:SimpleForm>
+        </content>
+        <buttons>
+            <Button text="Delete" press="handleDelete" visible="{helper>/edit}" />        
+            <Button text="Save" press="handleSave" />
+            <Button text="Close" press="handleClose" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

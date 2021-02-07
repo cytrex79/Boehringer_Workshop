@@ -1,0 +1,12 @@
+<mvc:View controllerName="ns.Parameter_Routing.controller.Info" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<MessagePage
+		title="Information"
+		text="App Information"
+		description="This App is to demonstrate routing"/>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

@@ -1,0 +1,35 @@
+  method BUSINESSPARTNERS_CREATE_ENTITY.
+
+ DATA: ls_entry_data TYPE zcl_zprep_mpc_ext=>ts_businesspartner,
+          ls_headerdata TYPE bapi_epm_bp_header,
+          ls_bp_id      TYPE bapi_epm_bp_id,
+          lt_return     TYPE TABLE OF bapiret2.
+* Get request data
+    io_data_provider->read_entry_data(
+      IMPORTING es_data = ls_entry_data
+    ).
+* Map request fields to function module parameters
+    ls_headerdata-company_name  = ls_entry_data-company_name.
+
+CALL FUNCTION 'BAPI_EPM_BP_CREATE'
+EXPORTING
+      headerdata        = ls_entry_data
+*      PERSIST_TO_DB     = ABAP_TRUE
+    IMPORTING
+      businesspartnerid = ls_bp_id
+    TABLES
+      return            = lt_return.
+
+IF lt_return IS NOT INITIAL.
+    "Message Container
+    mo_context->get_message_container( )->add_messages_from_bapi( lt_return ).
+    RAISE EXCEPTION TYPE /iwbep/cx_mgw_busi_exception
+      EXPORTING
+        textid = /iwbep/cx_mgw_busi_exception=>business_error
+        message_container = mo_context->get_message_container( ).
+ENDIF.
+
+er_entity = ls_entry_data.
+er_entity-bp_id = ls_bp_id.
+
+  endmethod.

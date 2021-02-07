@@ -1,0 +1,47 @@
+<mvc:View controllerName="training.bi.UI5Module.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page">
+                    <content>
+                        <Table items="{/}">
+                            <columns>
+                                <Column>
+                                    <header><Text text="{i18n>updated}" /></header>
+                                </Column>
+                                <Column>
+                                    <header><Text text="{i18n>country}" /></header>
+                                </Column>
+                                <Column>
+                                    <header><Text text="{i18n>cases}" /></header>
+                                </Column>
+                                <Column>
+                                    <header><Text text="{i18n>tests}" /></header>
+                                </Column>
+                                <Column>
+                                    <header><Text text="{i18n>deaths}" /></header>
+                                </Column>
+                                <Column>
+                                    <header><Text text="{i18n>population}" /></header>
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{path:'updated', formatter: '.toDateTime'}" />
+                                        <Text text="{country}" />
+                                        <Text text="{cases}" />
+                                        <Text text="{tests}" />
+                                        <Text text="{deaths}" />
+                                        <Text text="{population}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

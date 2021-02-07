@@ -1,0 +1,30 @@
+@Metadata.layer: #CUSTOMER
+annotate view ZFlights
+    with 
+{
+    @UI.hidden: true
+    Carrid;
+   @UI.hidden: true 
+    Connid;
+    
+    @UI.lineItem: [{ position: 10, importance: #HIGH }]   
+    Fldate;
+    
+    @UI.lineItem: [{ position: 30, importance: #HIGH }]   
+    Price;
+    
+    @UI.lineItem: [{ position: 40, importance: #HIGH }]   
+    Currency;
+    
+    
+    @UI.lineItem: [{ position: 20, importance: #HIGH }]
+    @UI.selectionField: [{ position: 10 }] 
+    Planetype;
+      
+
+    @UI.lineItem: [{ position: 50, importance: #HIGH }]   
+    Seatsmax;
+    
+    @UI.lineItem: [{ position: 60, importance: #HIGH }]   
+    Seatsocc;
+}

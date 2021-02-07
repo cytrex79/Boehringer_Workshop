@@ -1,0 +1,56 @@
+<mvc:View controllerName="workshop.UI5Module.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+                        <Panel headerText="Flights" expandable="{device>/system/phone}" expanded="{= !${device>/system/phone} }">
+                            <content>
+                                <Table items="{ path: '/data', sorter:[ {path: 'carrId', descending: false} ] }">
+                                    <columns>
+                                        <Column>
+                                            <header>
+                                                <Text text="Carrier"/>
+                                            </header>
+                                        </Column>
+                                        <Column>
+                                            <header>
+                                                <Text text="Connection"/>
+                                            </header>
+                                        </Column>
+                                        <Column>
+                                            <header>
+                                                <Text text="Price"/>
+                                            </header>
+                                        </Column>
+                                        <Column>
+                                            <header>
+                                                <Text text="Availablity"/>
+                                            </header>
+                                        </Column>
+                                        <Column>
+                                            <header>
+                                                <Text text="Free seats"/>
+                                            </header>
+                                        </Column>
+                                    </columns>
+                                    <items>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <Text text="{carrId}"/>
+                                                <Text text="{connId}"/>
+                                                <Text text="{price} {currency}"/>
+                                                <core:Icon src="{= ${seatsMax} - ${seatsOcc} >= 30 ? 'sap-icon://message-success' : 'sap-icon://message-warning' }"/>
+                                                <Text text="{= ${seatsMax} - ${seatsOcc} }"/>
+                                            </cells>
+                                        </ColumnListItem>
+                                    </items>
+                                </Table>
+                            </content>
+                        </Panel>
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

@@ -1,0 +1,47 @@
+<mvc:View controllerName="workshop.UI5Module.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+                        <Image src="img/Register.jpeg" width="50%" class="sapUiHideOnPhone" />
+                        <f:SimpleForm
+                            editable="false"
+                            layout="ResponsiveGridLayout"
+                            title="Register"
+                            labelSpanXL="3"
+                            labelSpanL="3"
+                            labelSpanM="3"
+                            labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="4"
+                            emptySpanL="4"
+                            emptySpanM="4"
+                            emptySpanS="0"
+                            columnsXL="1"
+                            columnsL="1"
+                            columnsM="1"
+                            singleContainerFullSize="false" >
+                            <f:content>
+                                <Label text="Firstname" />
+                                <Input />
+                                <Label text="Lastname" />
+                                <Input />
+                                <Label text="Address" />
+                                <Input />
+                                <Label text="Zip / Country" />
+                                <Input />
+                                <Label text="Country" />
+                                <Input />
+                                <Label text="Email Address" />
+                                <Input />
+                                <Label/>
+                                <Button text="Register" />
+                            </f:content>
+                        </f:SimpleForm>
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

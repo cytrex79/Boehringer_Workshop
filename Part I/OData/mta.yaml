@@ -1,0 +1,56 @@
+_schema-version: "3.2"
+ID: OData
+version: 0.0.1
+modules:
+- name: odata-approuter
+  type: approuter.nodejs
+  path: odata-approuter
+  requires:
+  - name: OData_html_repo_runtime
+  - name: dest_OData
+  parameters:
+    disk-quota: 256M
+    memory: 256M
+- name: OData_ui_deployer
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: OData_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - UI5Module-content.zip
+      name: UI5Module
+      target-path: resources/
+- name: UI5Module
+  type: html5
+  path: UI5Module
+  build-parameters:
+    builder: custom
+    commands:
+    - npm run build
+    supported-platforms: []
+resources:
+- name: OData_html_repo_runtime
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-runtime
+- name: OData_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-host
+- name: dest_OData
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: destination
+    service-plan: lite
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm install

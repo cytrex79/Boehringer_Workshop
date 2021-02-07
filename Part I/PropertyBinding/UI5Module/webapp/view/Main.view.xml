@@ -1,0 +1,17 @@
+<mvc:View controllerName="workshop.UI5Module.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+                        <l:VerticalLayout>
+                            <Switch type="AcceptReject" state="{/enabled}"  />
+                            <Input enabled="{/enabled}" valueLiveUpdate="true" value="{/text}"></Input>
+                            <Text text="{/text}"></Text>
+                        </l:VerticalLayout>
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
